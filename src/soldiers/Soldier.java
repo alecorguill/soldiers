@@ -8,13 +8,13 @@ abstract class Soldier {
     protected String name;
     
     //Method to attack another soldier.
-    protected void attack(Soldier s){
-	s.setterHp(this.power);
-    }
+    abstract void attack(Soldier s);
     //Method that react to the attack based on the special ability of the soldier
     //it is abstract so needs to be implemented for each type of soldier
 
-    abstract void setterHp(int damage);
+    public void setterHp(int value){
+	this.hp += value;
+    }
     
     public int getterHp(){
 	return this.hp;
